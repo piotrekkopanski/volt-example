@@ -1,0 +1,46 @@
+<:Title>
+ My contacts
+
+<:Body>
+<div class="after" >
+
+</div>
+<div class="left">
+<table class="contact-table">
+  <thead>
+ <tr>
+   <th> Name</th>
+   <th> Last name</th>
+   <th> email </th>
+   <th> Phone </th>
+   <th> Delete </th>
+ </tr>
+  </thead>
+  <tbody>
+ {{ _contacts.each do |contact| }}
+ <tr
+class="{{ if !contact._name.downcase.include? _search and !contact._email.include? _search and !contact._last_name.downcase.include? _search and !contact._phone.include? _search}}hide{{else}}{{end}}"
+  >
+  <td><h3>{{ _name }} {{contact._name }}</h3></td>
+  <td><h3> {{contact._last_name }}</h3></td>
+  <td><h3> {{contact._email }}</h3></td>
+  <td><h3> {{contact._phone }}</h3></td>
+  <td><button e-click="contact.destroy">X</button></td>
+ </tr>
+{{end}}
+  </tbody>
+</table>
+</div>
+ 
+<div class="form-add-contact">
+    <:contact:new />
+ <br>
+ <div class="search">
+<input type="text" value="{{ _search }}" placeholder="Szukaj" />
+<p class="search">Szukasz: {{ _search }}</p>
+ </div>
+           </div>
+
+
+
+

@@ -1,0 +1,16 @@
+<:Title>
+ My contacts
+
+<:Body>
+  <div class="title">
+    <h2> New contact </h2>
+  </div>
+<div class="forms">
+  <form e-submit="save" role="form" >
+    <:fields:text value="{{_name}}" label="Name:"/>
+    <:fields:text value="{{_last_name}}" label="Last name:"/>
+    <:fields:text value="{{_email}}" label="email:"/>
+    <:fields:text value="{{_phone}}" label="phone:"/>
+  <button class= "btn btn-primary"> Save </button>
+  </form>
+</div>
