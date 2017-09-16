@@ -1,0 +1,67 @@
+// Place your apps css here
+
+
+tr.selected td {
+	background_color: #428bca;
+	color: #FFFFFF;
+}
+
+tr.selected td button {
+	color: #000000;
+}
+
+textarea {
+  height: 140px;
+  width: 100%;
+}
+
+tr.selected {
+    background-color: #288282;
+}
+
+.form-add-contact {
+  float: right;
+  width: 350px;
+}
+
+.left {
+    float: left;
+}
+
+.contact-table {
+  display: block;
+  font-family: sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-size: 115%;
+  max-width: 780px;
+  overflow: auto;
+  width: auto;
+  
+  th {
+    background-color: rgb(112, 196, 105);
+    color: white;
+    font-weight: normal;
+    padding: 20px 30px;
+    text-align: center;
+  }
+  td {
+    background-color: rgb(238, 238, 238);
+    color: rgb(111, 111, 111);
+    padding: 20px 30px;
+  }
+		}
+.forms {
+    background: #eeeeee;
+}
+.title {
+    background-color: #70c469;
+       height: 50px;
+      text-align: center;
+}
+button.btn.btn-primary {
+    width: 350px;
+}
+
+
+
+

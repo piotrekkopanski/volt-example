@@ -1,0 +1,36 @@
+class ContactController < Volt::ModelController
+before_action :set_default_table_options, only: :index
+
+def set_default_table_options
+   page._table = {
+       default_click_event: 'contact_click',
+       columns: [
+            {title: "Title", search_field: 'title', field_name: 'title', sort_name: 'title', shown: true},
+            {title: "Body", search_field: 'body', field_name: 'body', sort_name: 'body', shown: true},
+       ]
+    }
+end
+  def index
+    self.model = :store
+  end
+   
+   def new
+     self.model = store._contacts.buffer
+   end
+
+
+   
+  def save
+   model.save!.then do
+    new()
+   end
+  
+  end
+  private
+    # Use callbacks to share common setup or constraints between actions.
+  
+
+    # Never trust parameters from the scary internet, only allow the white list through.
+   
+
+end

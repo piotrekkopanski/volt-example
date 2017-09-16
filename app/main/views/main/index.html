@@ -1,0 +1,41 @@
+<:Title>
+  Contacts
+
+<:Body>
+  <h1>{{ _contacts.size }} Contacts</h1>
+
+  <button e-click="complete_all"> Complete {{incomplete }} Tasks</button>
+  <button e-click="clear_completed"> Clear completes </button>
+  <table class="table">
+    {{ _contacts.each_with_index do |contact, index| }}
+      <tr
+        e-click="params._index = index" class="{{ if current_index == index }}selected{{end}}"
+        >
+        <td
+       class="{{ if contact_search == contact._label }}selected{{end}}"
+        ><input type="checkbox" checked="{{ contact._completed }}"> </td>
+        <td class="{{ if contact._completed }}complete{{end}}"> {{ contact._label }} </td>
+        <td><button e-click="contact.destroy">X</button></td>
+      </tr>
+    {{ end }}
+  </table>
+
+  szukaj
+    <input e-submit="add_search" value="{{ page._new_contact!._search }}">
+  
+  <button e-click="search"> Search </button>
+
+   <form e-submit="add_contact" role="form">
+    <input value="{{ page._new_contact!._label }}">
+  </form>
+
+
+  <hr />
+
+  {{ if current_contact }}
+    <h1> {{ current_contact._label }} </h1>
+
+    <textarea>{{ current_contact._description }} </textarea>
+  {{ end }}
+
+
