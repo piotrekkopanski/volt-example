@@ -15,3 +15,29 @@
     <button e-click="message.destroy">x</button>
       <p>
   {{ end }}
+  <hr>
+   
+   Users
+  <div class = "users">
+  {{ store._users.each do |user| }}
+  {{ if user._show }}
+    <strong>{{ user.name }} </strong>
+    <span>({{ user._messages.size }}) </span>
+    <p>
+      {{ user._messages.each do |message| }}
+      <i> {{ message._body }} </i>
+      <i>{{Volt.current_user.name }}  </i>
+      <p>
+      {{end}}
+     {{end}}
+ {{end}}
+  </div>
+<p>
+Show messages :
+<p>
+   {{ store._users.each do |user| }}
+    <strong>{{ user.name }} </strong>
+    <input type="checkbox" checked="{{ user._show }}">
+    <p>
+ {{end}}
+  </div>
