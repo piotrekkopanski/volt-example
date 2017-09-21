@@ -3,6 +3,8 @@
 client '/contact', controller: 'contact'
 client '/contact/new',controller: 'contact', action: 'new'
 
+client '/chat',controller: 'chat'
+
 client '/about', action: 'about'
 
 # Routes for login and signup, provided by user_templates component gem

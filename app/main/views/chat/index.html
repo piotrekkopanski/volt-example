@@ -1,0 +1,17 @@
+<:Title>
+  Chat
+<:Body>
+  Chat
+   <h1> {{ store._messages.size }} messages</h1>
+  <form class="form-inline center" e-submit="send_message">
+    <input type="text" class="form-control" placeholder="Enter a message" value="{{ page._form._body}}">
+  <input type="submit" class="btn btn-default"/>
+  </form>
+  <hr/>
+
+  {{ store._messages.each do |message| }}
+    <strong>{{ message.user.name }} </strong>
+    <span>{{ message._body }} </span>
+    <button e-click="message.destroy">x</button>
+      <p>
+  {{ end }}
